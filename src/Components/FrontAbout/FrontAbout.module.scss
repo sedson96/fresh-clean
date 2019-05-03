@@ -1,0 +1,20 @@
+.stuff {
+    height: 240vh;
+    .row1{
+        height: 85vh;
+        background: black
+    }
+    .row2{
+        height: 70vh;
+        background-image: url("https://static1.squarespace.com/static/58a22aaa5016e1926aaf01e7/58c6ab85b8a79bba779e1f3c/58dd54c0e58c626c4d1f2ec1/1496319525726/cleanoffice+pic.jpg?format=2500w");
+        background-position: unset;
+        background-attachment: fixed;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .row3{
+        height: 85vh;
+        background: white
+    }
+}

@@ -1,0 +1,32 @@
+.main{
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e675ea;
+    background: -moz-linear-gradient(top, #e675ea 0%, #f9e3f9 100%);
+    background: -webkit-linear-gradient(top, #e675ea 0%,#f9e3f9 100%);
+    background: linear-gradient(to bottom, #e675ea 0%,#f9e3f9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e675ea', endColorstr='#f9e3f9',GradientType=0 );
+
+    .formCont{
+
+        display: flex;
+        flex-direction: column;
+        border: 1px solid red;
+        height: 85vh;
+        width: 40vw;
+        background: white;
+        padding: 0;
+        
+        
+    }
+    .smallInput {
+        margin: 30px;
+        }
+    .largeInput {
+        margin: 0px;
+        }
+}

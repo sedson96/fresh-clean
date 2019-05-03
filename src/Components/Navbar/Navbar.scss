@@ -1,0 +1,42 @@
+@import "bootstrap-scss";
+@import "../../variables.scss";
+.navbar {
+    // background-color: blue;
+    // height: 12vh;
+    // width: 100vw;
+    // position: fixed;
+    // top: 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-around;
+    // border: 1px solid red;
+}
+li {
+    list-style: none;
+}
+.navlinks {
+    display: flex;
+}
+.nav-item {
+    // border: 1px solid red;
+    // margin: 4px
+    width: 10em
+}
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20vw;
+    // border: 1px solid red;
+    
+    i{
+        font-size: 2em;
+        color: $primarypurp;
+    }
+    .logo{
+        border-bottom: 2px solid #E567E0 
+    }
+}
+.button{
+    color: $primarypurp;
+}
