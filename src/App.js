@@ -1,21 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { HashRouter } from "react-router-dom" 
+import { BrowserRouter } from "react-router-dom" 
 import routes from './routes';
 import Navbar from './Components/Navbar/Navbar';
-import Schedule from './Components/Schedule/Schedule';
+import Invoices from "./Components/Invoices/Invoices"
 
 function App() {
   return (
-    <HashRouter>
-    {/* //   <div className="App"> */}
-      <Navbar />
-    {/* //   {routes} */}
-    {/* //   </div> */}
-    <Schedule />
-    </HashRouter>
-
+     <>
+    // <BrowserRouter>
+    {/* //    <div className="App"> */}
+        <Navbar />
+    {/* //     {routes}
+    //   </div> */}
+    // </BrowserRouter>
+    <Invoices/> 
+    </>
   );
 }
 

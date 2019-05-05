@@ -1,14 +1,10 @@
 import React, {Component} from "react"
-import FrontContact from "../FrontContact/FrontContact";
-import FrontAbout from "../FrontAbout/FrontAbout";
+import styles from "./ClientAccount.module.scss"
 
 class ClientAccount extends Component {
-    constructor() {
-        super() 
-    }
     render() {
         return (
-        <div>
+        <div className={styles.test}>
             <h1>Client Account Page</h1>
             <h1>Username</h1>
             <h2>The Name</h2>

@@ -1,12 +1,10 @@
 import React, {Component} from "react"
+import styles from "./ClientInvoice.module.scss"
 
 class ClientInvoice extends Component {
-    constructor() {
-        super() 
-    }
     render() {
         return (
-        <div>
+        <div className={styles.test}>
             <h1>invoice Page</h1>
         </div>
         )

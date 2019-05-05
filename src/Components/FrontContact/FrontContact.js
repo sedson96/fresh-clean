@@ -2,12 +2,9 @@ import React, {Component} from "react"
 import styles from "./FrontContact.module.scss"
 
 class FrontContact extends Component {
-    constructor() {
-        super() 
-    }
     render() {
         return(
-            <main className={styles.main}>
+            <main className={styles.main} id="contact">
                 <form className={styles.formCont}>
                     <label>Name</label>
                     <input className={styles.smallInput} name="name" />

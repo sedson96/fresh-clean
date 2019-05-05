@@ -7,7 +7,7 @@ function FrontAbout () {
             <article className={styles.row1}>
 
             </article>
-            <article className={styles.row2}>
+            <article className={styles.row2} id="about">
             </article>
             <article className={styles.row3}>
             </article>

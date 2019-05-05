@@ -16,6 +16,7 @@ li {
 }
 .navlinks {
     display: flex;
+    font-size: 16px;
 }
 .nav-item {
     // border: 1px solid red;
@@ -26,7 +27,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 20vw;
+    // width: 20vw;
     // border: 1px solid red;
     
     i{

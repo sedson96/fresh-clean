@@ -1,0 +1,29 @@
+@import "../../variables.scss";
+
+.invoicebody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.invoice {
+    background: grey;
+    height: 55vh;
+    width: 70vw;
+    border-top-right-radius: 10px; 
+    border-top-left-radius: 10px; 
+    overflow: hidden;
+    
+}
+.title {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: $primarypurp
+}
+
+.charge {
+    display: flex;
+    
+}

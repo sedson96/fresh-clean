@@ -7,9 +7,6 @@ import {getSession} from "../../ducks/authReducer"
 import styles from "./Home.module.scss"
 
 class Home extends Component {
-    constructor() {
-        super() 
-    }
     componentDidMount() {
         this.props.getSession()
     }
@@ -18,7 +15,7 @@ class Home extends Component {
             <div>
             {this.props.username ? <Redirect to="/admin" /> :
             <>
-            <div className={styles.intro}></div>
+            <div className={styles.intro} id="home"></div>
             <FrontAbout/>
             <FrontContact/>
             </>}

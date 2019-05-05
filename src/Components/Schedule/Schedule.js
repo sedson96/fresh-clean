@@ -4,9 +4,7 @@ import {connect} from "react-redux"
 import {currentSchedule} from "../../ducks/scheduleReducer" 
 
 class Schedule extends Component {
-    constructor() {
-        super()  
-   }
+
    componentDidMount() {
        this.props.currentSchedule()
    }

@@ -15,28 +15,50 @@ class Navbar extends Component {
         return (
             <nav className="navbar navbar-expand-lg  fixed-top navbar-light bg-light">
             <div className="navbar-brand brand">
-                <i class="fas fa-broom"></i>
+                <i className="fas fa-broom"></i>
                 <h1 className="logo">Fresh Clean</h1>
             </div>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                {!this.props.username ? 
+                <>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav ">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul className="navbar-nav ">
+                    <li className="nav-item active">
+                    <a className="nav-link" href="#home">Home <span className="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <li className="nav-item">
+                    <a className="nav-link" href="#about">About</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <li className="nav-item">
+                    <a className="nav-link" href="#contact">Contact</a>
+                    </li> 
+                    <Link to="/login"><button className="btn btn-primary">login</button></Link>
+                    </ul>
+                    </div>
+                </>
+                    :
+                <>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul className="navbar-nav ">
+                    <li className="nav-item active">
+                    <Link to="/client"><h5 className="nav-link">Dashboard <span className="sr-only">(current)</span></h5></Link>
                     </li>
-                    
-                    {this.props.username ? <button onClick={this.logout}>logout</button> : <Link to="/login"><button className="btn btn-primary">login</button></Link>}
-                </ul>
-                </div>
+                    <li className="nav-item">
+                    <Link to="/client/invoice"><h5 className="nav-link">Invoice</h5></Link>
+                    </li>
+                    <li className="nav-item">
+                    <Link to="/client/account"><h5 className="nav-link">Account</h5></Link>
+                    </li>
+                    <button onClick={this.logout}>logout</button>
+                 </ul>
+                 </div>
+                 </>
+                }
             </nav>
         )
     }
