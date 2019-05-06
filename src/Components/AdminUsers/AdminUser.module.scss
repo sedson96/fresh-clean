@@ -1,0 +1,14 @@
+.placeholder {
+    height: 20vh;
+}
+.fill {
+   justify-content: center; 
+   width: 100vw; 
+   display: grid;
+   grid-template-columns: 330px 330px 330px;
+   grid-template-rows: 240px 240px 240px;
+   grid-column-gap: 50px;
+   grid-row-gap: 100px;
+   padding: 10px;
+//    border: 1px solid red
+}

@@ -5,6 +5,7 @@ const session = require("express-session")
 
 const { getSession,login,register,logout } = require("./controllers/authCtrl")
 const { getCurrentWeek } = require("./controllers/scheduleCtrl")
+const { getUserInvoices } = require("./controllers/invoiceCtrl")
 
 const app = express()
 app.use(express.json())
@@ -27,9 +28,12 @@ app.use(session({
 app.get("/auth/user", getSession);
 app.post("/auth/login", login);
 app.post("/auth/register", register);
-app.delete("/auth/logout", logout);
+app.get("/auth/logout", logout);
 
 //scheduling
-app.get("/api/schedule/:id", getCurrentWeek)
+app.get("/api/schedule", getCurrentWeek)
+
+//invoices
+app.get("/api/invoices", getUserInvoices)
 
 app.listen(SERVER_PORT, () => console.log("Listening on the port")) 

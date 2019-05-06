@@ -7,14 +7,138 @@ class Invoices extends Component {
             <main className={styles.invoicebody}>
                 <div className={styles.invoice}> 
                     <div className={styles.title}> 
-                            <h1>hello</h1>
+                            <h1>Invoices</h1>
                     </div>
-                        <div className={styles.charge}>
-                            <div><h4>date</h4></div>
-                            <div><h4>building</h4></div>
-                            <div><h4>$1400</h4></div>
-                            <div><h4>paid</h4></div>
-                        </div>
+                        <table className={styles.charge}>
+                        <tbody>
+                            <tr>
+                                <th width="15%">Date</th>
+                                <th width="65%">Building</th>
+                                <th width="10%">Total</th>
+                                <th width="10%">Status</th>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>O1/20/2019</td>
+                                <td>Dentist Office</td>
+                                <td>$1400</td>
+                                <td>Paid</td>
+                            </tr>
+                        </tbody>
+                        </table>
                 </div>
             </main>
         )

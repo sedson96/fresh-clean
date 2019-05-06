@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {connect} from "react-redux";
 import {getSession} from "../../ducks/authReducer"
 import {Redirect} from "react-router-dom"
+import routes from "../../admin-routes"
 
 class Admin extends Component {
     componentDidMount () {
@@ -14,7 +15,7 @@ class Admin extends Component {
             <>
         {!this.props.isAdmin && <Redirect to="/client" />}
         <div>
-            <h1>Admin Page</h1>
+            {routes}
         </div>
         </>
         )

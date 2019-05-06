@@ -10,7 +10,7 @@ const CURRENT_SCHEDULE = "CURRENT_SCHEDEULE";
 export function currentSchedule() {
     return {
         type:CURRENT_SCHEDULE,
-        payload: axios.get("api/schedule/3").catch(error => {console.log(error)})
+        payload: axios.get("api/schedule").catch(error => {console.log(error)})
     }
 }
 

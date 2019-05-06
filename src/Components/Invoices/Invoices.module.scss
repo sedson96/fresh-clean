@@ -13,17 +13,44 @@
     width: 70vw;
     border-top-right-radius: 10px; 
     border-top-left-radius: 10px; 
-    overflow: hidden;
+    overflow: scroll;
     
 }
 .title {
     width: 100%;
     text-align: center;
     color: white;
-    background: $primarypurp
+    background: $primarypurp;
+
+    h1 {
+        margin: 0;
+    };
+    
 }
 
 .charge {
-    display: flex;
-    
+
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    width: 100%;
+    text-align: center;
+    overflow: scroll;
+    .row1{
+     -webkit-column-width: 10px
+    }
+    tr:nth-child(even){background-color: #f2f2f2;}
+
+    tr:hover {background-color: #ddd;}   
+    th {
+        column-width:15%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: grey;
+        color: white;
+        padding: 8px;
+    }
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
 }

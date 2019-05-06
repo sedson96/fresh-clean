@@ -18,6 +18,7 @@ const login = async (request,response) => {
           response.status(401).json("Incorrect username or password") 
         } else {
             request.session.user = {
+                id: user[0].user_id,
                 username: username,
                 isAdmin: user[0].is_admin
             }
