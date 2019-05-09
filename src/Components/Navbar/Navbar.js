@@ -1,5 +1,4 @@
 import React , {Component} from "react" 
-import {Link} from "react-router-dom"
 import {connect} from "react-redux"
 import axios from "axios";
 import {getSession} from "../../ducks/authReducer"
@@ -11,7 +10,8 @@ import ClientNav from "./ClientNav";
 
 class Navbar extends Component {
     logout = () => {
-        axios.get("auth/logout", {username: this.props.username})
+        console.log("hit")
+        axios.get("/auth/logout", {username: this.props.username})
         this.props.getSession()
     }
     render(){

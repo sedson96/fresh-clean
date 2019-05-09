@@ -4,8 +4,8 @@ const massive = require("massive")
 const session = require("express-session")
 
 const { getSession,login,register,logout } = require("./controllers/authCtrl")
-const { getCurrentWeek } = require("./controllers/scheduleCtrl")
-const { getUserInvoices } = require("./controllers/invoiceCtrl")
+const { getSchedule,getAdminCurrentWeek,getWeeks,getAllSchedules } = require("./controllers/scheduleCtrl")
+const { getUserInvoices,getAllInvoices } = require("./controllers/invoiceCtrl")
 
 const app = express()
 app.use(express.json())
@@ -31,9 +31,13 @@ app.post("/auth/register", register);
 app.get("/auth/logout", logout);
 
 //scheduling
-app.get("/api/schedule", getCurrentWeek)
+app.get("/api/schedule", getSchedule)
+app.get("/api/admin/current", getAdminCurrentWeek)
+app.get("/api/weeks", getWeeks)
+app.get("/api/admin/schedule", getAllSchedules)
 
 //invoices
 app.get("/api/invoices", getUserInvoices)
+app.get("/api/admin/invoices", getAllInvoices)
 
 app.listen(SERVER_PORT, () => console.log("Listening on the port")) 

@@ -4,7 +4,7 @@ import "./Navbar.scss";
 
 function AdminNav () {
     return (
-        <nav className="navbar navbar-default navbar-expand-lg  fixed-top navbar-light bg-light">
+        <nav style={{background: "#E567E0"}} className="navbar navbar-default navbar-expand-lg  fixed-top navbar-light ">
             <div className="navbar-brand brand">
                 <i className="fas fa-broom"></i>
                 <h1 className="logo">Fresh Clean</h1>

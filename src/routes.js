@@ -1,9 +1,9 @@
 import React from "react"
 import {Switch,Route} from "react-router-dom"
-import Home from "./Components/Home/Home";
-import Client from "./Components/Client/Client";
-import Admin from "./Components/Admin/Admin";
-import Login from "./Components/Login/Login";
+import Home from "./components/Home/Home";
+import Client from "./components/Client/Client";
+import Admin from "./components/Admin/Admin";
+import Login from "./components/Login/Login";
 
 
 export default (

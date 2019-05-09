@@ -1,15 +1,30 @@
 
-const getCurrentWeek = async (request,response) => {
+const getSchedule = async (request,response) => {
     const db = request.app.get("db")
     const {id} = request.session.user
-    console.log(id)
-    console.log(id)
-    const week = await db.client_week(id).catch(error => console.log(error));
-    
+    const week = await db.get_users_schedules(id).catch(error => console.log(error));
     response.json(week)
-
+}
+const getAdminCurrentWeek = async (request, response) => {
+    const db = request.app.get("db")
+    const week = await db.get_schedule_week().catch(error => console.log(error));
+    response.json(week)
+}
+const getWeeks = async (request, response) => {
+    const db = request.app.get("db")
+    const week = await db.get_weeks().catch(error => console.log(error));
+    response.json(week)
+}
+const getAllSchedules = async (request, response) => {
+    const db = request.app.get("db")
+    const schedule = await db.get_all_schedules().catch(error => console.log(error));
+    response.json(schedule)
 }
 
 module.exports = {
-    getCurrentWeek,
+    getSchedule,
+    getAdminCurrentWeek,
+    getWeeks,
+    getAllSchedules
+
 }

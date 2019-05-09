@@ -1,0 +1,36 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.placeholder{
+    height: 6vw;
+}
+.charge {
+
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    width: 090%;
+    text-align: center;
+    overflow: scroll;
+    .row1{
+        -webkit-column-width: 10px
+    }
+    tr:nth-child(even){background-color: #f2f2f2;}
+
+    tr:hover {background-color: #ddd;}   
+    th {
+        column-width:15%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: grey;
+        color: white;
+        padding: 8px;
+    }
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+}

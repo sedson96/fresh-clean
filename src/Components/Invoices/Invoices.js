@@ -1,8 +1,11 @@
 import React,{Component} from "react"
 import styles from "./Invoices.module.scss"
+import {connect} from "react-redux"
+import { getInvoices } from "../../ducks/invoiceReducer";
 
 class Invoices extends Component {
     render () {
+        console.log(this.props)
         return(
             <main className={styles.invoicebody}>
                 <div className={styles.invoice}> 
@@ -144,5 +147,10 @@ class Invoices extends Component {
         )
     }
 }
+const mapStatetoProps = (reduxState) => {
+    return {
+        invoices: reduxState.invoice.invoices
 
-export default Invoices
+    }
+}
+export default connect(mapStatetoProps,{getInvoices})(Invoices)

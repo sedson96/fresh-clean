@@ -1,8 +1,8 @@
 import React from "react"
 import {Switch , Route} from "react-router-dom"
-import ClientAccount from "./Components/ClientAccount/ClientAccount"
-import ClientInvoice from "./Components/ClientInvoice/ClientInvoice"
-import Dashboard from "./Components/Dashboard/Dashboard"
+import ClientAccount from "./components/ClientAccount/ClientAccount"
+import ClientInvoice from "./components/ClientInvoice/ClientInvoice"
+import Dashboard from "./components/Dashboard/Dashboard"
 
 
 

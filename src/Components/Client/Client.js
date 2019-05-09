@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {Redirect} from "react-router-dom"
 import {connect} from "react-redux"
-import routes from "../../client-routes"
+import routes from "../../clientRoutes"
 
 class Client extends Component {
     render() {

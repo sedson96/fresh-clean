@@ -48,6 +48,7 @@ const register = async (request,response) => {
     }
 }
 const logout = (request,response) => {
+    console.log("hit")
     request.session.destroy()
     response.json(request.session)
 }

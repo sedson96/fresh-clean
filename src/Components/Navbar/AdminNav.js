@@ -4,7 +4,7 @@ import "./Navbar.scss";
 
 function AdminNav (props) {
     return (
-        <nav className="navbar navbar-default navbar-expand-lg  fixed-top navbar-light bg-light">
+        <nav style={{background: "#E567E0"}} className="navbar navbar-default navbar-expand-lg fixed-top navbar-light" >
             <div className="navbar-brand brand">
                 <i className="fas fa-broom"></i>
                 <h1 className="logo">Fresh Clean</h1>
@@ -15,13 +15,13 @@ function AdminNav (props) {
             <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul className="navbar-nav ">
                     <li className="nav-item active">
-                        <Link to="/admin/"><h5 className="nav-link">Dashboard <span className="sr-only">(current)</span></h5></Link>
+                        <Link to="/admin/"><h5 className="nav-link">Clients <span className="sr-only">(current)</span></h5></Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/admin/schedule"><h5 className="nav-link">Schedule</h5></Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/admin/invoice"><h5 className="nav-link">Invoice</h5></Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/admin/account"><h5 className="nav-link">Account</h5></Link>
                     </li>
                 <button onClick={props.logout}>logout</button>
             </ul>

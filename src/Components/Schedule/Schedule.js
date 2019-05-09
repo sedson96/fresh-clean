@@ -1,12 +1,13 @@
 import React, {Component} from "react" 
 import styles from "./Schedule.module.scss"
 import {connect} from "react-redux"
-import {currentSchedule} from "../../ducks/scheduleReducer" 
+import {currentSchedule, getSchedule} from "../../ducks/scheduleReducer" 
 
 class Schedule extends Component {
 
    componentDidMount() {
-       this.props.currentSchedule()
+       this.props.currentSchedule();
+       this.props.getSchedule()
    }
    render() {
        console.log(this.props)
@@ -65,8 +66,8 @@ class Schedule extends Component {
 
  function mapStatetoProps (reduxState) {
      return {
+         schedule: reduxState.schedule.schedule,
          current: reduxState.schedule.current,
-         schedule: reduxState.schedule.schedule
      }
  }
-export default connect(mapStatetoProps,{currentSchedule})(Schedule)
+export default connect(mapStatetoProps,{currentSchedule,getSchedule})(Schedule)

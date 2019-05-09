@@ -33,7 +33,6 @@ class Login extends Component {
         
     }
     render() {
-        console.log(this.props)
         return(
             <>
             {this.state.login && <Redirect to="/admin" />}
