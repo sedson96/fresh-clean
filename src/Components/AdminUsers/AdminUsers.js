@@ -1,8 +1,10 @@
 import React, {Component} from "react";
+import {connect} from "react-redux"
 import UserCard from "../UserCard/UserCard";
 import styles from "./AdminUser.module.scss";
 import AddUser from "../AddUser/AddUser"
 import Modal from "react-awesome-modal"
+import { getClients } from "../../ducks/userReducer";
 
 class AdminUser extends Component {
     constructor() {
@@ -10,6 +12,9 @@ class AdminUser extends Component {
         this.state = {
             addUser: false
         }
+    }
+    componentDidMount() {
+        this.props.getClients()
     }
     showForm = () => {
         if (this.state.addUser) {
@@ -19,6 +24,10 @@ class AdminUser extends Component {
         }
     }
     render() {
+        const users = this.props.clients.map(client => {
+            return <UserCard client={client} />
+        })
+
         return (
             <>
             <Modal visible={this.state.addUser} effect="fadeInUp" onClickAway={() => this.showForm()}>
@@ -27,11 +36,16 @@ class AdminUser extends Component {
             <div className={styles.placeholder} />
             <button onClick={this.showForm}>Add New Client</button>
             <div className={styles.fill}>
-                <UserCard/>
+                {users}
             </div>
             </>
         )
     }
 }
 
-export default AdminUser
+const mapStatetoProps = (reduxState) => {
+    return {
+        clients: reduxState.users.clients
+    }
+}
+export default connect(mapStatetoProps,{getClients})(AdminUser)

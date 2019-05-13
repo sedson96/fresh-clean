@@ -22,7 +22,6 @@ const login = async (request,response) => {
                 username: username,
                 isAdmin: user[0].is_admin
             }
-            console.log(request.session.user)
             response.json(request.session.user)
         }
     }

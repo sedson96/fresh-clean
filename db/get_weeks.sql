@@ -1,1 +1,2 @@
-SELECT * FROM week;
+SELECT * FROM week 
+ORDER BY week_start DESC;

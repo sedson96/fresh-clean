@@ -5,11 +5,12 @@ const initialState = {
 }
 
 export const GET_INVOICES = "GET_INVOICES"
+export const GET_USER_INVOICES = "GET_USER_INVOICES"
 
-export function getUserInvoices (id) {
+export function getUserInvoices () {
     return {
-        type: GET_INVOICES,
-        payload: axios.getUserInvoices("api/invoice/user")
+        type: GET_USER_INVOICES,
+        payload: axios.get("/api/invoices")
     }
 }
 export function getInvoices () {
@@ -23,6 +24,11 @@ function reducer (state=initialState,action) {
     console.log(action)
     switch(type){
         case `${GET_INVOICES}_FULFILLED`: 
+            return {
+                ...state,
+                invoices: payload.data
+            }
+        case `${GET_USER_INVOICES}_FULFILLED`: 
             return {
                 ...state,
                 invoices: payload.data

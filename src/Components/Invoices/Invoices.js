@@ -1,11 +1,18 @@
 import React,{Component} from "react"
 import styles from "./Invoices.module.scss"
 import {connect} from "react-redux"
-import { getInvoices } from "../../ducks/invoiceReducer";
+import { getUserInvoices } from "../../ducks/invoiceReducer";
+import InvoiceTableItem from "./InvoiceTableItem"
 
 class Invoices extends Component {
+    componentDidMount() {
+        this.props.getUserInvoices()
+    }
     render () {
         console.log(this.props)
+        const tableItems = this.props.invoices.map(invoice => {
+            return <InvoiceTableItem invoice={invoice} />
+        })
         return(
             <main className={styles.invoicebody}>
                 <div className={styles.invoice}> 
@@ -26,120 +33,7 @@ class Invoices extends Component {
                                 <td>$1400</td>
                                 <td>Paid</td>
                             </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
+                            {tableItems}
                         </tbody>
                         </table>
                 </div>
@@ -153,4 +47,4 @@ const mapStatetoProps = (reduxState) => {
 
     }
 }
-export default connect(mapStatetoProps,{getInvoices})(Invoices)
+export default connect(mapStatetoProps,{getUserInvoices})(Invoices)

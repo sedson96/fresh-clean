@@ -16,7 +16,21 @@
 .past {
     height:100vh;
     width: 20vw;
-    background: #AFAFAF
+    background: #AFAFAF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    input{
+        visibility: hidden;
+    }
+    input:checked + label{
+        font-size: 1.2em;
+    }
+    label{
+        font-size: 1em;
+    }
 }
 .dayright{
     border: 1px solid grey;

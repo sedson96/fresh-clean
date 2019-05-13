@@ -20,11 +20,16 @@ const getAllSchedules = async (request, response) => {
     const schedule = await db.get_all_schedules().catch(error => console.log(error));
     response.json(schedule)
 }
-
+const week = async (request, response) => {
+    const db = request.app.get("db")
+    const week = await db.get_week().catch(error => console.log(error));
+    response.json(week[0])
+}
 module.exports = {
     getSchedule,
     getAdminCurrentWeek,
     getWeeks,
-    getAllSchedules
+    getAllSchedules,
+    week
 
 }

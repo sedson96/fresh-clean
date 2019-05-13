@@ -25,7 +25,7 @@
     // justify-content: space-between;
     background: #AFAFAF;
     border-top-left-radius: 20px;
-    overflow: scroll;
+    overflow: auto;
 }
 .dayleft {
     border: 1px solid grey;
@@ -37,7 +37,7 @@
     // justify-content: space-between;
     background: #AFAFAF;
     border-top-right-radius: 20px;
-    overflow: scroll;
+    overflow: auto;
 }
 .days{
     border: 1px solid grey;
@@ -48,7 +48,7 @@
     align-items: center;
     // justify-content: space-between;
     background: #AFAFAF;
-    overflow: scroll;
+    overflow: auto;
 }
 .monday{
     // height: 25%;

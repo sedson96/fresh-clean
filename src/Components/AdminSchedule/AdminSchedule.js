@@ -1,8 +1,10 @@
 import React, {Component} from "react" 
 import styles from "./AdminSchedule.module.scss"
 import {connect} from "react-redux"
-import {currentSchedule, getWeeks, getAdminSchedule} from "../../ducks/scheduleReducer" 
+import {getWeek, getWeeks, getAdminSchedule} from "../../ducks/scheduleReducer" 
 import AdminSimpleSchedule from "../AdminSimpleSchedule/AdminSimpleSchedule";
+import AdminDetailSchedule from "../AdminDetailedSchedule/AdminDetailSchedule";
+import style from "react-awesome-modal/lib/style";
 
 class AdminSchedule extends Component {
     constructor() {
@@ -13,10 +15,10 @@ class AdminSchedule extends Component {
         }
     }
    async componentDidMount() {
-       await this.props.currentSchedule()
+       await this.props.getWeek()
        this.props.getWeeks()
        this.props.getAdminSchedule()
-       this.setState({weekID: this.props.current[0].week_id})
+       this.setState({weekID: this.props.current})
    }
    handleClick = event => {
        if(this.state.simple) {
@@ -36,21 +38,22 @@ class AdminSchedule extends Component {
            )
        })
        return (
-           
-            <div className={styles.schedulebody}>
-                <div>
-                    <select onChange={this.handleChange}>
-                     <option selected="defaultValue">Choose Date</option>
-                       {dropdown}
-                    </select>
+            <>
+                    <div className={styles.search}>
+                        <select onChange={this.handleChange}>
+                        <option selected="defaultValue">Choose Date</option>
+                        {dropdown}
+                        </select>
+                        {this.state.simple ? 
+                            <button onClick={this.handleClick}>Detailed</button> : 
+                            <button onClick={this.handleClick}>Simple</button>}
+                    </div>
+                <div className={styles.schedulebody}>
                     {this.state.simple ? 
-                        <button onClick={this.handleClick}>Simple</button> : 
-                        <button onClick={this.handleClick}>Detailed</button>}
+                        <AdminSimpleSchedule weekID={this.state.weekID}/> :
+                        <AdminDetailSchedule weekID={this.state.weekID}/>}
                 </div>
-                {this.state.simple ? 
-                    <AdminSimpleSchedule weekID={this.state.weekID}/> :
-                    <h4>Detailed list</h4>}
-            </div>
+            </>
            )
    }
 }
@@ -62,4 +65,4 @@ class AdminSchedule extends Component {
          weeks: reduxState.schedule.weeks
      }
  }
-export default connect(mapStatetoProps,{currentSchedule, getWeeks,getAdminSchedule})(AdminSchedule)
+export default connect(mapStatetoProps,{ getWeek, getWeeks,getAdminSchedule})(AdminSchedule)

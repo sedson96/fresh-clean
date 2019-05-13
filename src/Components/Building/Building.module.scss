@@ -1,0 +1,42 @@
+.detail {
+    border: 15px solid purple;
+    background: lightgrey;
+    border-radius: 5px;
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+
+    .days {
+        display: flex;
+
+        .checks {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            padding: 30px;
+            margin-left: 1px;
+            input[type='checkbox'] {
+                -webkit-appearance:none;
+                width:30px;
+                height:30px;
+                background:white;
+                border-radius:5px;
+                border:2px solid #555;
+            }
+            input[type='checkbox']:checked {
+                background: purple;
+            }
+        }
+    }
+            i {
+                position: relative;
+                bottom: 40px;
+                left: 10px;
+                font-size: 1.5em;
+                margin: 3px;
+                cursor: pointer;
+            }
+}
