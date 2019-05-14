@@ -4,19 +4,21 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    margin-top: 100vh;
+    
 }
-.placeholder{
-    height: 6vw;
-}
+.button{
+    margin-bottom: 20px;
+}   
 .charge {
-
+    
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     table-layout: fixed;
     width: 090%;
     text-align: center;
     overflow: scroll;
     .row1{
-        -webkit-column-width: 10px
+        -webkit-column-width: 10px;
     }
     tr:nth-child(even){background-color: #f2f2f2;}
 

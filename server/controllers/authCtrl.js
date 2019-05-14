@@ -28,7 +28,7 @@ const login = async (request,response) => {
 
 }
 const register = async (request,response) => {
-    const {username , password , isAdmin} = request.body;
+    const {username , password , name,phone,email} = request.body;
     const db = request.app.get("db");
 
     let user = await db.get_user(username).catch(error => console.log(error))
@@ -37,12 +37,8 @@ const register = async (request,response) => {
         response.status(403).json("Username already taken")
     } else {
         let hash = await bcrypt.hash(password,10)
-        db.add_user([username,hash,isAdmin]).catch(error => console.log(error))
-        
-        request.session.user = {
-            username,
-            isAdmin: isAdmin
-        }
+        const result = await db.add_user([username,hash,name,email,phone]).catch(error => console.log(error))
+        console.log(result)
         response.json(request.session.user)
     }
 }

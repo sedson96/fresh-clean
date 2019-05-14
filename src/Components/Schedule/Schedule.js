@@ -18,7 +18,7 @@ class Schedule extends Component {
         if(building.wednesday) return <li>{building.name}</li>
     })
     const thursday = buildings.map(building => {
-        if(building.thurday) return <li>{building.name}</li>
+        if(building.thursday) return <li>{building.name}</li>
     })
     const friday = buildings.map(building => {
         if(building.friday) return <li>{building.name}</li>

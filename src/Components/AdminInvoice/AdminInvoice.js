@@ -10,12 +10,13 @@ class AdminInvoice extends Component {
     render() {
         console.log(this.props)
         const invoiceRows = this.props.invoices.map(row => {
+            const date = new Date(row.date).toDateString()
             return (
                 <tr>
+                    <td>{date}</td>
+                    <td>{row.name}</td>
                     <td>{row.price}</td>
-                    <td>{row.paid}</td>
-                    <td>{row.invoice_id}</td>
-                    <td>{row.building_id}</td>
+                    <td>{row.paid ? "Paid" : "Pending"}</td>
                 </tr>
             )
         })
@@ -23,7 +24,7 @@ class AdminInvoice extends Component {
             <>
             <div className={styles.placeholder}></div>
             <div className={styles.body}>
-                <div>
+                <div className={styles.button}>
                     <button>Create New Invoice</button>
                 </div>
                  <table className={styles.charge}>

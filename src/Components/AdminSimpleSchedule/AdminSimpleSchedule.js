@@ -1,26 +1,30 @@
 import React, {Component} from "react"
 import styles from "./AdminSimpleSchedule.module.scss"
 import {connect} from "react-redux"
+import {getAdminSchedule} from "../../ducks/scheduleReducer"
 
 class AdminSimpleSchedule extends Component {
+    componentDidMount() {
+        this.props.getAdminSchedule()
+    }
     render () {
         const buildings = this.props.schedule.filter(building => {
             if(building.week_id === +this.props.weekID) return building
         })
         const monday = buildings.map(building => {
-            if(building.monday) return <li>{building.building_id}</li>
+            if(building.monday) return <li>{building.name}</li>
         })
         const tuesday = buildings.map(building => {
-            if(building.tuesday) return <li>{building.building_id}</li>
+            if(building.tuesday) return <li>{building.name}</li>
         })
         const wednesday = buildings.map(building => {
-            if(building.wednesday) return <li>{building.building_id}</li>
+            if(building.wednesday) return <li>{building.name}</li>
         })
         const thursday = buildings.map(building => {
-            if(building.thurday) return <li>{building.building_id}</li>
+            if(building.thursday) return <li>{building.name}</li>
         })
         const friday = buildings.map(building => {
-            if(building.friday) return <li>{building.building_id}</li>
+            if(building.friday) return <li>{building.name}</li>
         })
         return (
             <article className={styles.schedule}>
@@ -70,9 +74,7 @@ class AdminSimpleSchedule extends Component {
 }
 function mapStatetoProps (reduxState) {
     return {
-        current: reduxState.schedule.current,
         schedule: reduxState.schedule.schedule,
-        weeks: reduxState.schedule.weeks
     }
 }
-export default connect(mapStatetoProps)(AdminSimpleSchedule)
+export default connect(mapStatetoProps, {getAdminSchedule})(AdminSimpleSchedule)

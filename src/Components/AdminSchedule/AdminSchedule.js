@@ -31,10 +31,11 @@ class AdminSchedule extends Component {
        this.setState({weekID: event.target.value})
    } 
    render() {
-       console.log(this.props)
        const dropdown = this.props.weeks.map(week => {
+        const start = new Date(week.week_start).toDateString()
+        const end = new Date(week.week_end).toDateString()
            return (
-                <option key={week.week_id} value={week.week_id}>{week.week_start}-{week.week_end}</option>
+                <option key={week.week_id} value={week.week_id}>{start}-{end}</option>
            )
        })
        return (
@@ -45,8 +46,8 @@ class AdminSchedule extends Component {
                         {dropdown}
                         </select>
                         {this.state.simple ? 
-                            <button onClick={this.handleClick}>Detailed</button> : 
-                            <button onClick={this.handleClick}>Simple</button>}
+                            <button onClick={this.handleClick}>Edit</button> : 
+                            <button onClick={this.handleClick}>Schedule</button>}
                     </div>
                 <div className={styles.schedulebody}>
                     {this.state.simple ? 

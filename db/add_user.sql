@@ -1,4 +1,5 @@
-INSERT INTO users (username, password, is_admin)
-VALUES  ($1,$2,$3);
+INSERT INTO users (username, password,name,email,phone)
+VALUES  ($1,$2,$3,$4,$5);
 
-SELECT * FROM users;
+SELECT * FROM users
+WHERE is_admin = false;

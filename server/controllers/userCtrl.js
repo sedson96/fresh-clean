@@ -4,7 +4,6 @@ const getClients = async (request,response) => {
     console.log(clients)
     response.json(clients)
 }
-
 module.exports = {
     getClients
 }
