@@ -5,6 +5,7 @@ const initialState = {
 }
 
 export const GET_INVOICES = "GET_INVOICES"
+export const CREATE_INVOICE = "CREATE_INVOICE"
 export const GET_USER_INVOICES = "GET_USER_INVOICES"
 
 export function getUserInvoices () {
@@ -19,11 +20,22 @@ export function getInvoices () {
         payload: axios.get("/api/admin/invoices")
     }
 }
+export function createInvoice (buildingID, amount) {
+    return {
+        type: CREATE_INVOICE,
+        payload: axios.get("/api/admin/invoices", {buildingID, amount})
+    }
+}
 function reducer (state=initialState,action) {
     const {type,payload} = action;
     console.log(action)
     switch(type){
         case `${GET_INVOICES}_FULFILLED`: 
+            return {
+                ...state,
+                invoices: payload.data
+            }
+        case `${CREATE_INVOICE}_FULFILLED`: 
             return {
                 ...state,
                 invoices: payload.data

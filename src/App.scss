@@ -64,4 +64,30 @@ table {
   html {
 	scroll-behavior: smooth;
   }
+	
+	.waves {
+    z-index: 4;
+    width:100vw;
+    fill: purple;
+    svg {
+      width:100%;
+    }
+    .wave {
+      animation: wave 10s linear;
+      animation-iteration-count:infinite;
+      fill: purple;
+    }
+    #wave2 {
+      animation-duration:15s;
+      animation-direction: reverse;
+      opacity: .6
+    }
+    #wave3 {
+      animation-duration: 15s;
+      opacity:.3;
+    }
+  }
+  @keyframes wave {
+    to {transform: translateX(-100%);}
+  }
   

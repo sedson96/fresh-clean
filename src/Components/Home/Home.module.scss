@@ -14,10 +14,9 @@
     color: white;
 }
 .waves {
-    width:100vw;
-    position:fixed;
-    bottom:-10px;
-    left:0;
+    z-index: 4;
+    // width:100vw;
+    fill: purple;
     svg {
       width:100%;
     }

@@ -1,0 +1,21 @@
+.detailed {
+    width: 50vw;
+    text-align: left;
+    padding: 20px;
+
+    .info{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    h1 {
+        border-bottom: 1px solid purple; 
+    }
+    ul{
+        text-align: center;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-around
+    }
+}

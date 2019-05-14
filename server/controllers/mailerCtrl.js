@@ -32,6 +32,10 @@ const frontContact = (request,response) => {
         }
     })
 }
+const contactClient = (request,response) => {
+    const {email,subject,message} = request.body
+    
+}
 
 module.exports = {
     frontContact,

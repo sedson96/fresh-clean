@@ -4,7 +4,15 @@ const getBuildings = async (request,response) => {
     console.log(results)
     response.json(results)
 }
+const getUsersBuilding = async (request,response) => {
+    const db = request.app.get("db")
+    const {id} = request.params
+    const results = await db.get_users_building(id)
+    console.log(results)
+    response.json(results)
+}
 
 module.exports = {
-    getBuildings
+    getBuildings,
+    getUsersBuilding
 }

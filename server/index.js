@@ -7,7 +7,7 @@ const { getSession,login,register,logout } = require("./controllers/authCtrl")
 const { getSchedule,getAdminCurrentWeek,getWeeks,getAllSchedules,week,updateSchedule,addSchedule} = require("./controllers/scheduleCtrl")
 const { getUserInvoices,getAllInvoices } = require("./controllers/invoiceCtrl")
 const { getClients } = require("./controllers/userCtrl")
-const { getBuildings } = require("./controllers/buildingCtrl");
+const { getBuildings,getUsersBuilding } = require("./controllers/buildingCtrl");
 const { frontContact } = require("./controllers/mailerCtrl")
 
 const app = express()
@@ -49,6 +49,7 @@ app.get("/api/admin/invoices", getAllInvoices)
 
 //buildings
 app.get("/api/buildings", getBuildings)
+app.get("/api/buildings/:id", getUsersBuilding)
 
 //users
 app.get("/api/clients", getClients)
