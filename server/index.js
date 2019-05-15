@@ -57,4 +57,6 @@ app.get("/api/buildings/:id", getUsersBuilding)
 //users
 app.get("/api/clients", getClients)
 
+app.use(express.static(`${__dirname}/../build`));
+
 app.listen(SERVER_PORT, () => console.log("Listening on the port")) 
