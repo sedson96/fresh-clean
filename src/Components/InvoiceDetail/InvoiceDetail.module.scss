@@ -1,0 +1,18 @@
+.invoices{
+    height: 28vw;
+    width: 40vw;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid purple; 
+    }
+    .paid{
+        display: flex;
+        justify-content: space-around;
+    }
+}

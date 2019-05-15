@@ -1,9 +1,9 @@
 require("dotenv").config();
-
-const stripe = new stripeLoader(process.env.STRIPE_KEY)
+const stripe = require("stripe")(process.env.STRIPE_KEY);
+// const stripe = new stripeLoader(process.env.STRIPE_KEY)
 
 const charge = (token, amt) => {
-    return stripe.charge.create({
+    return stripe.charges.create({
         amount: amt * 100,
         currency: "usd",
         source: token,
@@ -11,17 +11,18 @@ const charge = (token, amt) => {
     })
 }
 
-const invoice = async (request,response) => {
+const payInvoice = async (request,response,next) => {
     try {
-        const data = await charge(request.body.token.id, req.body.amount);
-
-        res.sendStatus(200)
-    } catch (event) {
-        res.sendStatus(500)
+        const data = await charge(request.body.token.id, request.body.price);
+        console.log("hit")
+        next()
+    } catch (error) {
+        console.log(error)
+        response.sendStatus(500)
     }
 }
 
 
 module.exports = {
-    invoice,
+    payInvoice,
 }

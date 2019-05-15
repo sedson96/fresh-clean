@@ -5,10 +5,11 @@ const session = require("express-session")
 
 const { getSession,login,register,logout } = require("./controllers/authCtrl")
 const { getSchedule,getAdminCurrentWeek,getWeeks,getAllSchedules,week,updateSchedule,addSchedule} = require("./controllers/scheduleCtrl")
-const { getUserInvoices,getAllInvoices } = require("./controllers/invoiceCtrl")
+const { getUserInvoices,getAllInvoices,createInvoice,paidInvoice } = require("./controllers/invoiceCtrl")
 const { getClients } = require("./controllers/userCtrl")
 const { getBuildings,getUsersBuilding } = require("./controllers/buildingCtrl");
 const { frontContact } = require("./controllers/mailerCtrl")
+const { payInvoice } = require("./controllers/stripeCtrl")
 
 const app = express()
 app.use(express.json())
@@ -45,7 +46,9 @@ app.get("/api/week", week)
 
 //invoices
 app.get("/api/invoices", getUserInvoices)
+app.post("/api/invoices", createInvoice)
 app.get("/api/admin/invoices", getAllInvoices)
+app.post("/api/payinvoice", payInvoice,paidInvoice)
 
 //buildings
 app.get("/api/buildings", getBuildings)

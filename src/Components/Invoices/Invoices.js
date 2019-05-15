@@ -27,12 +27,6 @@ class Invoices extends Component {
                                 <th width="10%">Total</th>
                                 <th width="10%">Status</th>
                             </tr>
-                            <tr>
-                                <td>O1/20/2019</td>
-                                <td>Dentist Office</td>
-                                <td>$1400</td>
-                                <td>Paid</td>
-                            </tr>
                             {tableItems}
                         </tbody>
                         </table>

@@ -20,10 +20,10 @@ export function getInvoices () {
         payload: axios.get("/api/admin/invoices")
     }
 }
-export function createInvoice (buildingID, amount) {
+export function createInvoice (buildingID, price) {
     return {
         type: CREATE_INVOICE,
-        payload: axios.get("/api/admin/invoices", {buildingID, amount})
+        payload: axios.post("/api/invoices", {buildingID, price})
     }
 }
 function reducer (state=initialState,action) {

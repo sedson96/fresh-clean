@@ -1,11 +1,25 @@
 import React, {Component} from "react" 
+import Modal from "react-awesome-modal";
 import styles from "./AdminInvoice.module.scss";
+import CreateInvoice from "../CreateInvoice/CreateInvoice";
 import {connect} from "react-redux"
 import { getInvoices } from "../../ducks/invoiceReducer";
+import { getBuildings } from "../../ducks/buildingReducer";
 
 class AdminInvoice extends Component {
+    state = {
+        toggle: false
+    }
     componentDidMount() {
         this.props.getInvoices()
+        this.props.getBuildings()
+    }
+    showForm = () => {
+        if (this.state.toggle) {
+            this.setState({toggle: false})
+        } else {
+            this.setState({toggle: true})
+        }
     }
     render() {
         console.log(this.props)
@@ -25,7 +39,10 @@ class AdminInvoice extends Component {
             <div className={styles.placeholder}></div>
             <div className={styles.body}>
                 <div className={styles.button}>
-                    <button>Create New Invoice</button>
+                    <button onClick={this.showForm}>Create New Invoice</button>
+                    <Modal visible={this.state.toggle} effect="fadeInUp" onClickAway={() => this.showForm()}>
+                        <CreateInvoice buildings={this.props.buildings} showForm={this.showForm}/>
+                    </Modal>
                 </div>
                  <table className={styles.charge}>
                         <tbody>
@@ -45,7 +62,8 @@ class AdminInvoice extends Component {
 }
 const mapStatetoProps = (reduxState) => {
     return {
-        invoices: reduxState.invoice.invoices
+        invoices: reduxState.invoice.invoices,
+        buildings: reduxState.building.buildings
     }
 }
-export default connect(mapStatetoProps,{getInvoices})(AdminInvoice);
+export default connect(mapStatetoProps,{getInvoices,getBuildings})(AdminInvoice);

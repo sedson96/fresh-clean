@@ -1,6 +1,6 @@
 import React, {Component} from "react" 
 import Modal from "react-awesome-modal"
-import AddUser from "../AddUser/AddUser"
+import InvoiceDetail from "../InvoiceDetail/InvoiceDetail"
 
 class InvoiceTableItem extends Component {
     constructor() {
@@ -21,13 +21,13 @@ class InvoiceTableItem extends Component {
         return (
         <>
         <Modal visible={this.state.detail} effect="fadeInUp" onClickAway={() => this.showDetail()}>
-            <AddUser/>  
+            <InvoiceDetail invoice={this.props.invoice}/>  
         </Modal>
         <tr onClick={this.showDetail}>
-            <td>{this.props.invoice.zip}</td>
+            <td>{this.props.invoice.date}</td>
             <td>{this.props.invoice.name}</td>
             <td>{this.props.invoice.price}</td>
-            <td>{this.props.invoice.paid}</td>
+            <td>{this.props.invoice.paid ? "Paid" : "Pending"}</td>
         </tr>
         </>
         )
