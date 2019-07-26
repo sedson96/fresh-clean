@@ -23,7 +23,6 @@ class Dashboard extends Component {
         this.setState({weekID: event.target.value})
     }
     render() {
-        console.log(this.props)
         const weekList = this.props.weeks.map(week => {
              const start = new Date(week.week_start).toDateString()
              const end = new Date(week.week_end).toDateString()
@@ -31,18 +30,30 @@ class Dashboard extends Component {
                 <>
                 <input 
                 onClick={this.handleClick}
+                className={styles.radio}
                 type="radio" id={week.week_id}
                  name="weekID" value={week.week_id}/>
                 <label htmlFor={week.week_id}>{start}-{end}</label>
-                {/* //  <label onClick={this.handleClick} key={week.week_id} name="weekID" value={week.week_id}> {week.week_start}-{week.week_end} </radio> */}
                 </>
             )
         })
+        const dropdown = this.props.weeks.map(week => {
+            const start = new Date(week.week_start).toDateString()
+            const end = new Date(week.week_end).toDateString()
+               return (
+                    <option key={week.week_id} value={week.week_id}>{start}-{end}</option>
+               )
+           })
         return (
             <div className={styles.schedulebody}>
+            <div className={styles.placeholder}></div>
                 <aside className={styles.past}>
                     {weekList}
                 </aside>
+                <select className={styles.select} onChange={this.handleClick}>
+                        <option selected="defaultValue">Choose Date</option>
+                        {dropdown}
+                </select>
                 <Schedule weekID={this.state.weekID}/>
             </div>
         )

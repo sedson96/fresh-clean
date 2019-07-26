@@ -10,18 +10,20 @@ class InvoiceTableItem extends Component {
         }
     }
     showDetail = () => {
-        if(this.state.detail) {
+       if (window.innerWidth < 980) return 
+       if(this.state.detail) {
             this.setState({detail: false})
         } else {
             this.setState({detail: true})
         }
     } 
     render() {
-        console.log(this.props)
         return (
         <>
         <Modal visible={this.state.detail} effect="fadeInUp" onClickAway={() => this.showDetail()}>
+            <>
             <InvoiceDetail invoice={this.props.invoice}/>  
+            </>
         </Modal>
         <tr onClick={this.showDetail}>
             <td>{this.props.invoice.date}</td>

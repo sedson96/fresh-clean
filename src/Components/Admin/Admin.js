@@ -9,7 +9,6 @@ class Admin extends Component {
         this.props.getSession()
     }
     render() {
-        console.log(this.props)
         return (
             <>
         {!this.props.isAdmin && <Redirect to="/client" />}

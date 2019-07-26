@@ -1,6 +1,10 @@
-@import "../../variables.scss";
+@import "../../assets.scss";
 .schedulebody{
-    display: flex
+    display: flex;
+    justify-content: center;
+}
+.select{
+    display: none;
 }
 .schedule{
     display: flex;
@@ -40,7 +44,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background: #AFAFAF;
+    background: $sc;
     border-top-left-radius: 20px;
     overflow: hidden;
 }
@@ -111,11 +115,36 @@
         border-bottom: $primarypurp 1px solid 
     }
 }
-
-// .test {
-//     position: absolute;
-//     height: 100vh;
-//     width: 100vw;
-//     background: $primarypurp;
-//     opacity: 0.6;
-// }
+    @media(max-width: 1000px) {
+        %all-days{
+            width:100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .past {
+            display: none;
+        }
+        .select{
+            display: block;
+            position: absolute;;
+            top:12vh
+            
+        }
+        .schedule{
+            width: 70vw;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-auto-rows: minmax(240px, auto);
+            grid-row-gap: 100px;
+            margin:20vh auto;
+        } 
+        .days{
+            @extend %all-days;
+        }
+        .dayleft{
+            @extend %all-days;
+        }
+        .dayright{
+            @extend %all-days;
+        }
+     }

@@ -1,32 +1,41 @@
+@import "../../assets.scss";
 .main{
     
+    @include column; 
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #e675ea;
-    background: -moz-linear-gradient(top, #e675ea 0%, #f9e3f9 100%);
-    background: -webkit-linear-gradient(top, #e675ea 0%,#f9e3f9 100%);
-    background: linear-gradient(to bottom, #e675ea 0%,#f9e3f9 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e675ea', endColorstr='#f9e3f9',GradientType=0 );
-
+    background: $primarypurp;
+    color: purple;
+    font-size: 1.5em;
+    background: -moz-linear-gradient(top, $primarypurp 0%, #f9e3f9 100%);
+    background: -webkit-linear-gradient(top, $primarypurp 0%,#f9e3f9 100%);
+    background: linear-gradient(to bottom, $primarypurp 0%,#f9e3f9 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$primarypurp', endColorstr='#f9e3f9',GradientType=0 );
+    
     .formCont{
-
+        
         display: flex;
         flex-direction: column;
-        border: 1px solid red;
+        justify-content: space-between;
         height: 85vh;
         width: 40vw;
+        border-radius: 10px;
         background: white;
-        padding: 0;
+        padding: 30px;
         
         
     }
+    labl
     .smallInput {
         margin: 30px;
         }
     .largeInput {
-        margin: 0px;
+        margin: 10px 30px;
+        height: 20vh;
+        text-indent: 20px;
         }
+@media (max-width: 1000px) {
+    .formCont{
+        width: 80vw;
+    }
+}
 }

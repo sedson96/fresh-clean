@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../assets.scss";
 
 .invoicebody {
     display: flex;
@@ -9,7 +9,7 @@
 }
 .invoice {
     margin-top: 20vh; 
-    background: grey;
+    background: $sc;
     height: 55vh;
     width: 70vw;
     border-top-right-radius: 10px; 
@@ -53,5 +53,12 @@
     td {
         border: 1px solid black;
         padding: 8px;
+    }
+}
+@media(max-width: 1000px) {
+    .invoice{
+        width: 90%;
+        height: 90%;
+        margin-bottom: 20px;
     }
 }

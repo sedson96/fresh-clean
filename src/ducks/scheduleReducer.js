@@ -27,7 +27,6 @@ export function getSchedule() {
     }
 }
 export function getWeeks() {
-    console.log("hit")
     return {
         type: GET_WEEKS,
         payload: axios.get("/api/weeks").catch(error => {console.log(error)})

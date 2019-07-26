@@ -18,7 +18,6 @@ class UserCard extends Component {
     }
     async componentDidMount() {
         const results = await axios.get(`/api/buildings/${this.props.client.user_id}`)
-        console.log(results)
         this.setState({userBuildings: results.data})
     }
     showForm = () => {
@@ -29,7 +28,6 @@ class UserCard extends Component {
         }
     }
     render() {
-        console.log(this.state)
         return(
             <> 
 

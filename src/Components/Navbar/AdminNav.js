@@ -23,7 +23,7 @@ function AdminNav (props) {
                     <li className="nav-item">
                         <Link to="/admin/invoice"><h5 className="nav-link">Invoice</h5></Link>
                     </li>
-                <button onClick={props.logout}>logout</button>
+                <button className="btn btn-secondary" onClick={props.logout}>logout</button>
             </ul>
             </div>
          </nav>

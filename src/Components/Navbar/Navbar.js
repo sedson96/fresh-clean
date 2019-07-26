@@ -10,7 +10,6 @@ import ClientNav from "./ClientNav";
 
 class Navbar extends Component {
     logout = () => {
-        console.log("hit")
         axios.get("/auth/logout", {username: this.props.username})
         this.props.getSession()
     }

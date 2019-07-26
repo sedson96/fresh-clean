@@ -14,7 +14,6 @@ const charge = (token, amt) => {
 const payInvoice = async (request,response,next) => {
     try {
         const data = await charge(request.body.token.id, request.body.price);
-        console.log("hit")
         next()
     } catch (error) {
         console.log(error)

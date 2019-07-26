@@ -10,14 +10,16 @@ class Building extends Component {
             [event.target.name]: event.target.checked
         }
         axios.put("/api/schedule", this.props)
-        console.log(this.props)
     }
+    handleClick = async (event) => {
+        await axios.delete(`/api/schedule/${this.props.building}/${this.props.weekID}`)
+    }
+
     render() {
         const {name, monday,tuesday, wednesday, thursday, friday} = this.props
-        console.log(this.props)
         return (
         <div className={styles.detail}>
-                    <i class="far fa-minus-square"></i>
+                    <i className="far fa-minus-square" onClick={this.handleClick}></i>
             <h1>{name}</h1>
             <div className={styles.days}>
                 <div className={styles.checks}>

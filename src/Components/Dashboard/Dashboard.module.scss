@@ -1,0 +1,18 @@
+
+.placeholder{
+    height: 12vh;;
+}
+
+
+.select{
+    display: none
+}
+
+
+
+
+@media(max-width: 1000px){
+    .select{
+        display: block;
+    }
+}

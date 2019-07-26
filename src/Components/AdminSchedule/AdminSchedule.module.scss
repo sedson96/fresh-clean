@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../assets.scss";
 .schedulebody{
     display: flex;
     flex-direction: column;
@@ -107,4 +107,11 @@
     left: 0;
     right: 0;
     margin: auto 
+}
+@media (max-width: 1000px) {
+    .search{
+        button{
+            display: none;
+        }
+    }
 }

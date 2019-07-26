@@ -4,7 +4,7 @@ const massive = require("massive")
 const session = require("express-session")
 
 const { getSession,login,register,logout } = require("./controllers/authCtrl")
-const { getSchedule,getAdminCurrentWeek,getWeeks,getAllSchedules,week,updateSchedule,addSchedule} = require("./controllers/scheduleCtrl")
+const { getSchedule,getAdminCurrentWeek,getWeeks,getAllSchedules,week,updateSchedule,addSchedule,removeScheduled} = require("./controllers/scheduleCtrl")
 const { getUserInvoices,getAllInvoices,createInvoice,paidInvoice } = require("./controllers/invoiceCtrl")
 const { getClients } = require("./controllers/userCtrl")
 const { getBuildings,getUsersBuilding } = require("./controllers/buildingCtrl");
@@ -43,6 +43,7 @@ app.get("/api/admin/current", getAdminCurrentWeek)
 app.get("/api/admin/schedule", getAllSchedules)
 app.get("/api/weeks", getWeeks)
 app.get("/api/week", week)
+app.delete("/api/schedule/:buildingID/:weekID", removeScheduled)
 
 //invoices
 app.get("/api/invoices", getUserInvoices)

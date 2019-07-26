@@ -10,6 +10,7 @@ const login = async (request,response) => {
         console.log(error);
         response.status(401).json("Something went wrong")
     })
+    console.log(user)
     if(!user[0]) {
         response.status(401).json("Incorrect username or password")
     } else {
@@ -38,12 +39,10 @@ const register = async (request,response) => {
     } else {
         let hash = await bcrypt.hash(password,10)
         const result = await db.add_user([username,hash,name,email,phone]).catch(error => console.log(error))
-        console.log(result)
         response.json(request.session.user)
     }
 }
 const logout = (request,response) => {
-    console.log("hit")
     request.session.destroy()
     response.json(request.session)
 }

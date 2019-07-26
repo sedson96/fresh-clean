@@ -22,7 +22,6 @@ class AdminInvoice extends Component {
         }
     }
     render() {
-        console.log(this.props)
         const invoiceRows = this.props.invoices.map(row => {
             const date = new Date(row.date).toDateString()
             return (
@@ -39,7 +38,7 @@ class AdminInvoice extends Component {
             <div className={styles.placeholder}></div>
             <div className={styles.body}>
                 <div className={styles.button}>
-                    <button onClick={this.showForm}>Create New Invoice</button>
+                    <button className="btn btn-outline-secondary" onClick={this.showForm}>Create New Invoice</button>
                     <Modal visible={this.state.toggle} effect="fadeInUp" onClickAway={() => this.showForm()}>
                         <CreateInvoice buildings={this.props.buildings} showForm={this.showForm}/>
                     </Modal>

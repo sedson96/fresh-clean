@@ -34,7 +34,7 @@ class AdminUser extends Component {
               <AddUser/>  
             </Modal>
             <div className={styles.placeholder} />
-            <button onClick={this.showForm}>Add New Client</button>
+            <button className="btn btn-outline-secondary" onClick={this.showForm}>Add New Client</button>
             <div className={styles.fill}>
                 {users}
             </div>

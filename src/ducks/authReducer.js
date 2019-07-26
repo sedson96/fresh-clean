@@ -31,7 +31,6 @@ function reducer(state=initialState, action) {
                 isAdmin: payload.data.isAdmin,
             }
         case SET_SESSION: 
-            console.log(payload)
             return {
                 ...state,
                 username: payload.username,

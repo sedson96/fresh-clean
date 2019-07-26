@@ -23,7 +23,7 @@ function AdminNav () {
                         <li className="nav-item">
                             <a className="nav-link" href="#contact">Contact</a>
                         </li> 
-                            <Link to="/login"><button className="btn btn-primary">login</button></Link>
+                            <Link to="/login"><button className="btn btn-secondary">login</button></Link>
                         </ul>  
                 </div>
          </nav>

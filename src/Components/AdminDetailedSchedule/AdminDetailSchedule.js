@@ -14,11 +14,8 @@ class AdminDetailSchedule extends Component {
     }
     handleChange = (event) => {
         this.setState({newId: event.target.value})
-        console.log(this.state)
-        console.log(this.props.weekID)
     }
     handleClick = (event) => {
-        console.log(this.state)
         this.props.addSchedule(this.state.newId,this.props.weekID)
     }
     render () {

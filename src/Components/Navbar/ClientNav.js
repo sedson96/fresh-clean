@@ -23,7 +23,7 @@ function ClientNav (props) {
                     <li className="nav-item">
                         <Link to="/client/account"><h5 className="nav-link">Account</h5></Link>
                     </li>
-                <button onClick={props.logout}>logout</button>
+                <button className="btn btn-secondary" onClick={props.logout}>logout</button>
             </ul>
             </div>
          </nav>

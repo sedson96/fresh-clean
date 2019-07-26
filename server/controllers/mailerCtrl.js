@@ -21,7 +21,7 @@ const frontSetUp = (from,subject,text) => {
 }
 
 const frontContact = (request,response) => {
-    const {email, subject, message} = request.body;
+    const {email, subject, message,name } = request.body;
     const mail = frontSetUp(email,subject,message) 
     transporter.sendMail(mail, function (error,data) {
         if (error) {

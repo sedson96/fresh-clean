@@ -1,8 +1,17 @@
+@import "../../assets.scss";
 .stuff {
     height: 240vh;
     .row1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 85vh;
-        background: black
+        background: white;
+        color: purple;
+        h1{
+            font-size: 4em;
+        }
+
     }
     .row2{
         height: 70vh;
@@ -15,6 +24,13 @@
     }
     .row3{
         height: 85vh;
-        background: white
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            color: $primarypurp;
+            font-size: 4em;
+        }
     }
 }

@@ -4,7 +4,6 @@ import {connect} from "react-redux"
 
 class Schedule extends Component {
    render() {
-       console.log(this.props)
        const buildings = this.props.schedule.filter(building => {
         if(building.week_id === +this.props.weekID) return building
     })

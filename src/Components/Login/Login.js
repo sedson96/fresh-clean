@@ -21,9 +21,8 @@ class Login extends Component {
     }
     async login() {
         const result = await axios.post("/auth/login", {username: this.state.username , password: this.state.password})
-        .catch(error => console.log(error))
-        console.log(result)
-        if (result) {
+        .catch(error => (error))
+        if (result.data) {
             this.props.setSession(result.data)
             this.setState({login: true})
         } else {
@@ -37,10 +36,16 @@ class Login extends Component {
             <>
             {this.state.login && <Redirect to="/admin" />}
             <div className={styles.login}>
-                <input name="username" value={this.state.username} onChange={this.handleChange}/>
-                <input name="password" value={this.state.password} onChange={this.handleChange}/>
-                <Link to='/'><button>Cancle</button></Link>
-                <button onClick={this.login}>Login</button>
+                <div className={styles.inputs}>
+                    <h1>Login</h1>
+                    <input name="username" type="username" placeholder="Username"value={this.state.username} onChange={this.handleChange}/>
+                    <input name="password" type="password" placeholder="Password"value={this.state.password} onChange={this.handleChange}/>
+                    <div className={styles.buttons}>
+                        <Link to='/'><button className="btn btn-primary" >Cancle</button></Link>
+                        <button className="btn btn-primary" onClick={this.login}>Login</button>
+                    </div>
+
+                </div>
             </div>
             </>
         )

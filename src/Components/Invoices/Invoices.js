@@ -9,7 +9,6 @@ class Invoices extends Component {
         this.props.getUserInvoices()
     }
     render () {
-        console.log(this.props)
         const tableItems = this.props.invoices.map(invoice => {
             return <InvoiceTableItem invoice={invoice} />
         })
