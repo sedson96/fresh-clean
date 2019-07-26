@@ -1,1 +1,1 @@
-Student roject designed to schedule and request invoices from clients
+Inividule Project made for managing service provider schedule and allowing them to send invoices to clients
